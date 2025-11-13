@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.blackbalk {
+    background-image: linear-gradient(to bottom, black, white);
+    width: 101%;
+    height: 150px;
+    margin: -8px;
+}
+
+.title {
+    color: white;
+    font-family: Noto Sans;
+    font-size: 40px;
+    font-weight: 600;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+.menu {
+    color:black;
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 500;
+    position:absolute;
+    margin: 0;
+    top: 0;
+}
