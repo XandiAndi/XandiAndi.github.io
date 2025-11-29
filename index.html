@@ -6,14 +6,19 @@
     <link rel="stylesheet" href="style.css">
     <title>Über mich</title>
 </head>
-<body>
+<body id="top">
+<header>
+    <a href="#top" class="scrollToTop">Zurück zum Seitenanfang</a>
+
     <!--grün - grauer Balken hinter dem Menü-->
 
     <p class="blackbalk"></p>
 
     <!--Titel-->
 
-    <div class="title">Über mich!</div>
+    <div>
+        <a href="index.html" class="titleLink">Über mich!</a>
+    </div>
 
     <!--Menüleiste-->
 
@@ -23,7 +28,7 @@
                 Home
             </li>
             <li>
-                About me
+                <a href="about.html" class="a">About me</a>
             </li>
             <li>
                 Leistungen
@@ -69,7 +74,8 @@
     <div>
         <a href="pictures.html" class="a1">weitere Bilder</a>
     </div>
-
+</header>
+<main>
     <!--Text unter den Bilder auf der Home Seite-->
 
     <div class="subtitle">
@@ -101,12 +107,27 @@
                 Erfolgreiches Leben führen
             </li>
         </div>
+</main>
 
-    <!--Übergangslösung zum testweisen Scrollen-->
+    <!--Fußzeile-->
 
-    <div style="margin-top: 80px">
+<footer>
 
+    <div class="footerTitle">
+        <a href="index.html">Über mich</a>
     </div>
-
+    <div class="footerText">
+        <li>
+            <a href="about.html">About me</a>
+        </li>
+        <li>
+            <a href="pictures.html">Bilder</a>
+        </li>
+        <li>
+            <a href="contact.html">Kontakt</a>
+        </li>
+    </div>
+    
+</footer>
 </body>
 </html>
