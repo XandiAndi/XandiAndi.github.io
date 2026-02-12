@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+body {
+    zoom: 100%;
+}
+
 .blackbalk {
     background-image: linear-gradient(to bottom, rgb(188, 221, 140), rgb(217, 221, 227), white);
     width: auto;
