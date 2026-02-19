@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <title>Bilder</title>
+    <style>
+    #panorama {
+        width: 750px;
+        height: 500px;
+        border-radius: 25px;
+        margin: 72px;
+        margin-top: 1700px;
+    }
+    </style>
 </head>
 <body id="top">
 <header>
-        <a href="#top" class="scrollToTop" style="margin-top: 825px;">Zurück zum Seitenanfang</a>
+        <a href="#top" class="scrollToTop" style="margin-top: 1725px;">Zurück zum Seitenanfang</a>
 
     <!--Balken hiter dem Menü-->
 
@@ -86,14 +97,22 @@
         style="margin: 12px; height: 334px; margin-top: 1570px;"
     >
 
-
+    <div id="panorama"></div>
+        <script>
+            pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "Images/dji_fly_20250702_174216_745_1751471256771_pano_optimized.jpg",
+            "autoLoad": true,
+            "showZoomCtrl": false
+            });
+        </script>
 
 </main>
 
     <footer class="footer1">
 
         <div class="footerTitle">
-        <a href="index.html" style="margin-top: 840px;">Über mich</a>
+        <a href="index.html" style="margin-top: 1740px;">Über mich</a>
     </div>
     <div class="footerText">
         <li>
