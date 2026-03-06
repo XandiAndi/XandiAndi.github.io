@@ -10,7 +10,6 @@
 
 <body id="top">
     <header>
-        <a href="#top" class="scrollToTop">Zurück zum Seitenanfang</a>
 
         <!--Balken hinter dem Menü-->
 
@@ -50,32 +49,76 @@
 
         <!--Bildseitentext-->
 
-        <div class="siteText" style="margin-top: 155px; margin-left: -200px">
-            <p style="font-size: 40px; color: rgb(150, 173, 168)">Hier werden dir deine favorisierten Bilder angezeigt</p>
+        <div id="imageList" class="siteText" style="margin-top: 135px; margin-left: -200px">
+            <p style="font-size: 40px; color: rgb(150, 173, 168)">Hier werden dir deine favorisierten Bilder angezeigt
+            </p>
         </div>
 
-        <img src="images\20250730_123131.jpg" style="width: auto; height: 400px">
-        
-        <footer class="footer3">
 
-            <div class="footerTitle">
-                <a href="index.html" style="margin-top: 15px;">Über mich</a>
-            </div>
-            <div class="footerText">
-                <li>
-                    <a href="about.html">About me</a>
-                </li>
-                <li>
-                    <a href="pictures.html">Bilder</a>
-                </li>
-                <li>
-                    <a href="contact.html">Kontakt</a>
-                </li>
-            </div>
+        <input type="button" value="Favoriten löschen" class="deleteButton" style=" margin: 20px; cursor: pointer"
+            onclick="localStorage.clear(); location.reload();">
 
-            <div class="blackbalk2"></div>
 
-        </footer>
+    </header>
+
+    <main>
+
+        <div id="myFavorites" style="display: flex; flex-wrap: wrap; gap: 15px;"></div>
+
+    </main>
+
+    <footer>
+
+        <div class="footerTitle">
+            <a href="index.html" style="margin-top: 95px">Über mich</a>
+        </div>
+
+        <a href="#top" class="scrollToTop">Zurück zum Seitenanfang</a>
+
+        <div class="footerText">
+            <li>
+                <a href="about.html">About me</a>
+            </li>
+            <li>
+                <a href="pictures.html">Bilder</a>
+            </li>
+            <li>
+                <a href="contact.html">Kontakt</a>
+            </li>
+        </div>
+
+        <div class="blackbalk2"></div>
+
+    </footer>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let favoritesContainer = document.getElementById("myFavorites");
+            let allURLs = Object.values(localStorage);
+
+            if (allURLs.length === 0) {
+                let deleteButton = document.querySelector(".deleteButton");
+                deleteButton.style.display = "none";
+                return;
+            }
+
+            allURLs.forEach(url => {
+                let img = document.createElement("img");
+                img.src = url;
+                favoritesContainer.appendChild(img);
+
+                img.style.width = "auto";
+                img.style.height = "300px";
+                img.style.borderRadius = "25px";
+                img.style.margin = "12px";
+                img.style.marginLeft = "60px"
+
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>

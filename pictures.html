@@ -21,7 +21,6 @@
 
 <body id="top">
     <header>
-        <a href="#top" class="scrollToTop" style="margin-top: 2880px;">Zurück zum Seitenanfang</a>
 
         <!--Balken hiter dem Menü-->
 
@@ -59,10 +58,7 @@
             </ul>
         </nav>
 
-        <!--Hauptbild-->
-
-        <img class="mainPicture" src="images\dji_fly_20251108_122826_799_1762601443920_photo_optimized.jpg"
-            style="margin: 12px;">
+    </header>    
 
         <!--Bildseitentext-->
 
@@ -71,22 +67,27 @@
             <p style="color: rgb(255, 169, 106); margin-left: 750px">Bilder ?</p>
         </div>
 
+        <!--Hauptbild-->
+
+        <img class="mainPicture images" src="images\dji_fly_20251108_122826_799_1762601443920_photo_optimized.jpg"
+            style="margin: 12px">
+
         <!--Nebenbilder-->
 
-        <img class="mainPicture" src="images\20250730_122927.jpg"
+        <img class="mainPicture images" src="images\20250730_122927.jpg"
             style="margin: 12px; margin-left: 1060px; height: 390px;">
     </header>
 
-    <main>
+    <main style="padding-bottom: 1550px;">
 
-        <img class="mainPicture" src="images\Panorama_Sunset.jpg" style="margin-top: 470px; height: 455px;">
+        <img class="mainPicture images" src="images\Panorama_Sunset.jpg" style="margin-top: 470px; height: 455px;">
 
-        <img class="mainPicture" src="images\DJI_0127.JPG" style="height: 500px; margin-top: 1000px;">
+        <img class="mainPicture images" src="images\DJI_0127.JPG" style="height: 500px; margin-top: 1000px;">
 
-        <img class="mainPicture" src="images\DJI_0149.JPG"
+        <img class="mainPicture images" src="images\DJI_0149.JPG"
             style="margin-left: 1042px; margin-top: 1000px; height: 400px;">
 
-        <img class="mainPicture" src="images\Panorama Sunset 2.jpg" style="height: 334px; margin-top: 1570px;">
+        <img class="mainPicture images" src="images\Panorama Sunset 2.jpg" style="height: 334px; margin-top: 1570px;">
 
         <div id="panorama"></div>
         <script>
@@ -98,26 +99,29 @@
             });
         </script>
 
-        <img class="mainPicture" src="images\20250528_202611.jpg"
+        <img class="mainPicture images" src="images\20250528_202611.jpg"
             style="margin-top: 1963px; margin-left: 953px; height: 450px">
 
-        <img class="mainPicture" src="images\20250730_123131.jpg" style="margin-top: 2530px; height: 500px">
+        <img class="mainPicture images" src="images\20250730_123131.jpg" style="margin-top: 2595px; height: 500px">
 
-        <img class="mainPicture" src="images\20250730_153851.jpg"
+        <img class="mainPicture images" src="images\20250730_153851.jpg"
             style="margin-top: 2630px; margin-left: 1042px; height: 400px;">
 
-        <img class="mainPicture" src="images\20250902_070716.jpg" style="margin-top: 3105px; height: 800px;">
+        <img class="mainPicture images" src="images\20250902_070716.jpg" style="margin-top: 3105px; height: 800px;">
 
-        <img class="mainPicture" src="images\dji_fly_20251226_142046_834_1766755286101_photo_optimized.jpg"
+        <img class="mainPicture images" src="images\dji_fly_20251226_142046_834_1766755286101_photo_optimized.jpg"
             style="margin-top: 3105px; margin-left: 685px; height: 600px;">
 
     </main>
 
-    <footer class="footer1">
+    <footer>
 
         <div class="footerTitle">
-            <a href="index.html" style="margin-top: 2900px;">Über mich</a>
+            <a href="index.html">Über mich</a>
         </div>
+
+        <a href="#top" class="scrollToTop">Zurück zum Seitenanfang</a>
+
         <div class="footerText">
             <li>
                 <a href="about.html">About me</a>
@@ -133,6 +137,41 @@
         <div class="blackbalk2"></div>
 
     </footer>
-</body>
 
+    <script>
+
+        let images = document.querySelectorAll(".images");
+
+        images.forEach((image, i) => {
+            let index = "image" + i;
+
+            if (localStorage.getItem(index)) {
+                image.classList.add("image-active");
+            }
+
+            image.addEventListener("click", function () {
+
+                this.classList.add("animate-click");
+
+                setTimeout(() => {
+                    this.classList.remove("animate-click");
+                }, 400);
+
+                if (localStorage.getItem(index)) {
+                    localStorage.removeItem(index);
+                    this.classList.remove("image-active");
+                    console.log("removed");
+                    
+                } else {
+                    localStorage.setItem(index, this.src);
+                    this.classList.add("image-active");
+                    console.log("saved");
+                    
+                }
+            });
+        });
+
+    </script>
+
+</body>
 </html>
